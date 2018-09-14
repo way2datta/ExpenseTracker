@@ -1,0 +1,67 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.card {
+    height: 200px;
+    display: inline-table;
+    width: 100%;
+    margin-top: 25px;
+}
+
+    .card a {
+        height: 200px;
+        cursor: pointer;
+        color: white;
+        text-decoration: none;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        font-size: xx-large;
+    }
+    .card a:hover {
+        cursor: pointer;
+        color: white;
+        text-decoration: none;
+    }
+
+
+.bg-aqua {
+    background-color: #00c0ef !important;
+}
+
+.bg-green{
+    background-color: #00a65a !important;
+}
+
+.bg-yellow {
+    background-color: #f39c12 !important;
+}
+
+.margin-top-20 {
+    margin-top:20px;
+}
+.month-selector {
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

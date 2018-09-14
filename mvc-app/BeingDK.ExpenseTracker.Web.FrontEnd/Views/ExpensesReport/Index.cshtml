@@ -1,0 +1,63 @@
+﻿@model BeingDK.ExpenseTracker.Web.FrontEnd.Models.ExpensesReportViewModel
+
+@{
+    ViewBag.Title = "Expenses report";
+}
+
+<div class="row margin-top-20">
+    <div class="col-sm-12">
+        @using (Html.BeginForm("Index", "ExpensesReport"))
+        {
+            @Html.AntiForgeryToken()
+            <input type="month" class="month-selector" id="SelectedMonth" name="SelectedMonth"
+                   value="@Model.SelectedMonth.ToString("yyyy-MM")" />
+            <input type="submit" class="btn btn-primary" value="Go!" />
+        }
+
+        @{
+         
+
+            if (!string.IsNullOrWhiteSpace(Model.GraphUrl))
+            {
+                <img  src="@Model.GraphUrl" alt="GRaph"/>
+            }
+        }
+
+        <table class="table">
+            <tr>
+                <th>
+                    Incurred Date
+                </th>
+                <th>
+                    Amount
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Category
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.Expenses)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IncurredAt)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Amount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ExpenseCategory.Name)
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

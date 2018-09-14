@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/mvc-app/.vs/BeingDK.ExpenseTracker/v15
+/mvc-app/.vs/config
+/mvc-app/BeingDK.ExpenseTracker.Web.FrontEnd/bin
+/mvc-app/BeingDK.ExpenseTracker.Web.FrontEnd/images
+/mvc-app/BeingDK.ExpenseTracker.Web.FrontEnd/obj/Debug
+/mvc-app/packages
