@@ -25,7 +25,7 @@
                     {
                         <li>@Html.ActionLink("Dashboard", "Index", "Dashboard")</li>
                     }
-                    </ul>
+                </ul>
                 @Html.Partial("_Login")
             </div>
         </div>
@@ -41,5 +41,7 @@
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
 </body>
 </html>
