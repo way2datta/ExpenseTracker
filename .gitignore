@@ -8,3 +8,5 @@
 /mvc-app/BeingDK.ExpenseTracker.Web.FrontEnd/images
 /mvc-app/BeingDK.ExpenseTracker.Web.FrontEnd/obj/Debug
 /mvc-app/packages
+/angular-webapi/BeingDK.ExpenseTracker.Web.SpaWithWebApi/bin
+/angular-webapi/BeingDK.ExpenseTracker.Web.SpaWithWebApi/obj/Debug

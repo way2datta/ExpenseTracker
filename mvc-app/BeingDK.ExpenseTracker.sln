@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeingDK.ExpenseTracker.Web.FrontEnd", "BeingDK.ExpenseTracker.Web.FrontEnd\BeingDK.ExpenseTracker.Web.FrontEnd.csproj", "{92521915-9FC7-459C-954F-6F956F895748}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeingDK.ExpenseTracker.Web.SpaWithWebApi", "..\angular-webapi\BeingDK.ExpenseTracker.Web.SpaWithWebApi\BeingDK.ExpenseTracker.Web.SpaWithWebApi.csproj", "{6267D308-BFD6-4789-9F6C-48CB32C5E662}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{92521915-9FC7-459C-954F-6F956F895748}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92521915-9FC7-459C-954F-6F956F895748}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92521915-9FC7-459C-954F-6F956F895748}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6267D308-BFD6-4789-9F6C-48CB32C5E662}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6267D308-BFD6-4789-9F6C-48CB32C5E662}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6267D308-BFD6-4789-9F6C-48CB32C5E662}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6267D308-BFD6-4789-9F6C-48CB32C5E662}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
