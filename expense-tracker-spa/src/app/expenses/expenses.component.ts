@@ -9,7 +9,10 @@ import { EXPENSES } from '../mock-expenses';
 })
 export class ExpensesComponent implements OnInit {
   expenses: Expense[] = EXPENSES;
-
+  selectedExpense: Expense;
+  onSelect(expense: Expense): void {
+    this.selectedExpense = expense;
+  }
   constructor() { }
 
   ngOnInit() {

@@ -1,7 +1,11 @@
 <h2>My expenses</h2>
-<ul class="heroes">
-  <!-- <li *ngFor="let expense of expenses"> -->
-  <li *ngFor="let expense of expenses">
+<ul class="expensees">
+  <li *ngFor="let expense of expenses"
+  [class.selected]="expense === selectedExpense"
+  (click)="onSelect(expense)">
     <span class="badge">{{expense.id}}</span> {{expense.name}}
   </li>
 </ul>
+
+<app-expense-details [expense]="selectedExpense"></app-expense-details>
+
