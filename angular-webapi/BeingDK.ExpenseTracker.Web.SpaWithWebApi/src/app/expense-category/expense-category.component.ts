@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ExpenseCategory } from '../entities/ExpenseCategory';
+import { EXPENSE_CATEGORIES } from '../mock-expense-categories';
+import { ExpensesCategoryService } from '../expenses-category.service';
 
-const EXPENSE_CATEGORIES = [
-  new ExpenseCategory(1, 'Bills'),
-  new ExpenseCategory(2, 'Grocery'),
-  new ExpenseCategory(3, 'Food')
-];
 
 @Component({
   selector: 'app-expense-category',
@@ -15,11 +12,14 @@ const EXPENSE_CATEGORIES = [
 export class ExpenseCategoryComponent implements OnInit {
   categories: ExpenseCategory[];
 
-  constructor() {
-    this.categories = EXPENSE_CATEGORIES;
+  constructor(private expensesCategoryService: ExpensesCategoryService) {
+  }
+
+  getHeroes(): void {
+    this.categories = this.expensesCategoryService.getExpenseCategories();
   }
 
   ngOnInit() {
+    this.getHeroes();
   }
-
 }

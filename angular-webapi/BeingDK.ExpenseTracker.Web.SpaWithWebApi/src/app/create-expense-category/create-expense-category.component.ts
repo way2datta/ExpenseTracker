@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create-expense-category',
@@ -8,7 +8,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class CreateExpenseCategoryComponent implements OnInit {
   createExpenseCategoryForm = new FormGroup({
-    name: new FormControl(''),
+    name: new FormControl('')
   });
 
   constructor() { }
