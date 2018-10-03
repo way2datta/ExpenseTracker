@@ -6,6 +6,9 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { ExpensesComponent } from '../app/expenses/expenses.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ExpenseCategoryComponent } from './expense-category/expense-category.component';
+import { CreateExpenseCategoryComponent } from './create-expense-category/create-expense-category.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {
@@ -19,6 +22,16 @@ const appRoutes: Routes = [
     data: { title: 'Dashboard' }
   },
   {
+    path: 'expense-categories',
+    component: ExpenseCategoryComponent,
+    data: { title: 'Expense Categories' }
+  },
+  {
+    path: 'expense-categories/create',
+    component: CreateExpenseCategoryComponent,
+    data: { title: 'Expense Categories' }
+  },
+  {
     path: '',
     component: HomeComponent,
     data: { title: 'Home' }
@@ -30,11 +43,14 @@ const appRoutes: Routes = [
     AppComponent,
     ExpensesComponent,
     DashboardComponent,
-    HomeComponent
+    HomeComponent,
+    ExpenseCategoryComponent,
+    CreateExpenseCategoryComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

@@ -1,0 +1,20 @@
+<p>
+  <a href="/expense-categories/create">Create New</a>
+</p>
+<table class="table">
+  <tbody><tr>
+    <th>
+          Name
+      </th>
+      <th></th>
+      <tr *ngFor="let category of categories">
+          <td>
+              {{category.name}}
+          </td>
+          <td>
+              <a href="/expense-categories/{{category.id}}">Edit</a> |
+              <a href="/expense-categories/{{category.id}}">Details</a> |
+              <a href="/expense-categories/{{category.id}}">Delete</a>
+          </td>
+      </tr>
+</tbody></table>
