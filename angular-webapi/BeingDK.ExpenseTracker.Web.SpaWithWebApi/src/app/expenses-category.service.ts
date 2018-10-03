@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-
 const categoriesUrl = 'http://localhost:61415/api/ExpenseCategories';
 const httpOptions = {
   headers: new HttpHeaders({
@@ -23,5 +22,9 @@ export class ExpensesCategoryService {
 
   addExpenseCategory (expenseCategory: ExpenseCategory): Observable<ExpenseCategory> {
       return this.http.post<ExpenseCategory>(categoriesUrl, expenseCategory, httpOptions);
+  }
+
+  deleteExpenseCategory (id: number): Observable<ExpenseCategory> {
+      return this.http.delete<ExpenseCategory>(categoriesUrl+'/' + id);
   }
 }

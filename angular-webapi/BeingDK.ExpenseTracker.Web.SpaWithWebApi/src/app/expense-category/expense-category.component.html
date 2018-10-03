@@ -12,9 +12,8 @@
               {{category.name}}
           </td>
           <td>
-              <a routerLink="/expense-categories/{{category.id}}">Edit</a> |
-              <a routerLink="/expense-categories/{{category.id}}">Details</a> |
-              <a routerLink="/expense-categories/{{category.id}}">Delete</a>
+              <a  class="btn btn-link" routerLink="/expense-categories/{{category.id}}">Edit</a>
+              <button type="button" class="btn btn-danger"  (click)="deleteExpenseCategory(category.id)">Delete</button>
           </td>
       </tr>
 </tbody></table>

@@ -22,4 +22,14 @@ export class ExpenseCategoryComponent implements OnInit {
   ngOnInit() {
     this.getExpenseCategories();
   }
+
+  deleteExpenseCategory(id: number): void {
+
+    if (confirm('Are you sure to delete this record ?') == true) {
+      this.expensesCategoryService.deleteExpenseCategory(id)
+      .subscribe(x => {
+        this.getExpenseCategories();
+      })
+    }
+  }
 }
