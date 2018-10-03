@@ -1,5 +1,5 @@
 <p>
-  <a href="/expense-categories/create">Create New</a>
+  <a routerLink="/expense-categories/create">Create New</a>
 </p>
 <table class="table">
   <tbody><tr>
@@ -12,9 +12,9 @@
               {{category.name}}
           </td>
           <td>
-              <a href="/expense-categories/{{category.id}}">Edit</a> |
-              <a href="/expense-categories/{{category.id}}">Details</a> |
-              <a href="/expense-categories/{{category.id}}">Delete</a>
+              <a routerLink="/expense-categories/{{category.id}}">Edit</a> |
+              <a routerLink="/expense-categories/{{category.id}}">Details</a> |
+              <a routerLink="/expense-categories/{{category.id}}">Delete</a>
           </td>
       </tr>
 </tbody></table>
