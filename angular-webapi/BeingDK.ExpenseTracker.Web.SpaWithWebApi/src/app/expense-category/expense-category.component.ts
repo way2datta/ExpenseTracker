@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ExpenseCategory } from '../entities/ExpenseCategory';
-import { EXPENSE_CATEGORIES } from '../mock-expense-categories';
 import { ExpensesCategoryService } from '../expenses-category.service';
 
 
@@ -15,11 +14,12 @@ export class ExpenseCategoryComponent implements OnInit {
   constructor(private expensesCategoryService: ExpensesCategoryService) {
   }
 
-  getHeroes(): void {
-    this.categories = this.expensesCategoryService.getExpenseCategories();
+  getExpenseCategories(): void {
+    this.expensesCategoryService.getExpenseCategories()
+        .subscribe(categories => this.categories = categories);
   }
 
   ngOnInit() {
-    this.getHeroes();
+    this.getExpenseCategories();
   }
 }

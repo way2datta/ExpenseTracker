@@ -9,6 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ExpenseCategoryComponent } from './expense-category/expense-category.component';
 import { CreateExpenseCategoryComponent } from './create-expense-category/create-expense-category.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule }    from '@angular/common/http';
 
 const appRoutes: Routes = [
   {
@@ -51,6 +52,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
