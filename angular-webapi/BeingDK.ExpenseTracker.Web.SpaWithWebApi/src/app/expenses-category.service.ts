@@ -20,6 +20,10 @@ export class ExpensesCategoryService {
     return this.http.get<ExpenseCategory[]>(categoriesUrl)
   }
 
+  getExpenseCategory(id: number): Observable<ExpenseCategory> {
+    return this.http.get<ExpenseCategory>(categoriesUrl+"/"+id)
+  }
+
   addExpenseCategory (expenseCategory: ExpenseCategory): Observable<ExpenseCategory> {
       return this.http.post<ExpenseCategory>(categoriesUrl, expenseCategory, httpOptions);
   }

@@ -10,6 +10,7 @@ import { ExpenseCategoryComponent } from './expense-category/expense-category.co
 import { CreateExpenseCategoryComponent } from './create-expense-category/create-expense-category.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
+import { EditExpensesCategoryComponent } from './edit-expenses-category/edit-expenses-category.component';
 
 const appRoutes: Routes = [
   {
@@ -33,6 +34,11 @@ const appRoutes: Routes = [
     data: { title: 'Expense Categories' }
   },
   {
+    path: 'expense-categories/:id',
+    component: EditExpensesCategoryComponent,
+    data: { title: 'Expense Categories' }
+  },
+  {
     path: '',
     component: HomeComponent,
     data: { title: 'Home' }
@@ -46,7 +52,8 @@ const appRoutes: Routes = [
     DashboardComponent,
     HomeComponent,
     ExpenseCategoryComponent,
-    CreateExpenseCategoryComponent
+    CreateExpenseCategoryComponent,
+    EditExpensesCategoryComponent
   ],
   imports: [
     BrowserModule,
