@@ -27,7 +27,6 @@ export class CreateExpenseCategoryComponent implements OnInit {
   addExpenseCategory(expenseCategory: ExpenseCategory): void {
     this.expensesCategoryService.addExpenseCategory(expenseCategory)
       .subscribe(category => {
-        // console.log("This is it: "+category.name);
         this.router.navigate(['/expense-categories']);
       });
   }
