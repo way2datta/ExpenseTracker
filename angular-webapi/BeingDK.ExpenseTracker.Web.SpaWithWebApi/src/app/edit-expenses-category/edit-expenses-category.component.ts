@@ -23,4 +23,12 @@ export class EditExpensesCategoryComponent implements OnInit {
     .subscribe(c => this.category = c);
   }
 
+  updateExpenseCategory(category) {
+    console.log(category);
+    this.expensesCategoryService.updateExpenseCategory(category)
+    .subscribe(c => {
+      console.log(c);
+      // this.router.navigate(['/expense-categories']);
+    });
+  }
 }

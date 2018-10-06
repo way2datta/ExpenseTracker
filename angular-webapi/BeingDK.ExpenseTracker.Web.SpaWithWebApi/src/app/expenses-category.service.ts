@@ -28,6 +28,10 @@ export class ExpensesCategoryService {
       return this.http.post<ExpenseCategory>(categoriesUrl, expenseCategory, httpOptions);
   }
 
+  updateExpenseCategory (expenseCategory: ExpenseCategory): Observable<ExpenseCategory> {
+    return this.http.put<ExpenseCategory>(categoriesUrl+'/' + expenseCategory.id, expenseCategory, httpOptions);
+  }
+
   deleteExpenseCategory (id: number): Observable<ExpenseCategory> {
       return this.http.delete<ExpenseCategory>(categoriesUrl+'/' + id);
   }

@@ -64,7 +64,7 @@ namespace BeingDK.ExpenseTracker.Web.SpaWithWebApi.Controllers
         }
       }
 
-      return StatusCode(HttpStatusCode.NoContent);
+      return Ok(expenseCategory);
     }
 
     // POST: api/ExpenseCategories
