@@ -9,6 +9,12 @@ namespace BeingDK.ExpenseTracker.Web.SpaWithWebApi
     {
       GlobalConfiguration.Configure(WebApiConfig.Register);
       var config = GlobalConfiguration.Configuration;
+
+      var json = config.Formatters.JsonFormatter;
+      json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects;
+      config.Formatters.Remove(config.Formatters.XmlFormatter);
+
+
       config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
       config.Formatters.JsonFormatter.UseDataContractJsonSerializer = false;
     }

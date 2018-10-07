@@ -1,3 +1,40 @@
-<p>
-  expenses works!
-</p>
+<table class="table">
+  <tbody>
+    <tr>
+      <th>
+        Incurred Date
+      </th>
+      <th>
+        Amount
+      </th>
+      <th>
+        Description
+      </th>
+      <th>
+        Category
+      </th>
+      <th></th>
+    </tr>
+
+    <tr *ngFor="let expense of expenses">
+      <td>
+        {{expense.incurredAt}}
+      </td>
+      <td>
+        {{expense.amount}}
+      </td>
+      <td>
+        {{expense.description}}
+      </td>
+      <td>
+        {{expense.expenseCategory.name}}
+      </td>
+      <td>
+        <a href="/Expenses/Edit/4">Edit</a> |
+        <a href="/Expenses/Details/4">Details</a> |
+        <a href="/Expenses/Delete/4">Delete</a>
+      </td>
+    </tr>
+
+  </tbody>
+</table>

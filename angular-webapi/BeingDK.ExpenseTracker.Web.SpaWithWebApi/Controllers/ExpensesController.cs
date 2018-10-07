@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -19,7 +19,7 @@ namespace BeingDK.ExpenseTracker.Web.SpaWithWebApi.Controllers
         // GET: api/Expenses
         public IQueryable<Expense> GetExpenses()
         {
-            return db.Expenses;
+            return db.Expenses.Include(x=>x.ExpenseCategory);
         }
 
         // GET: api/Expenses/5

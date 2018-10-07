@@ -53,7 +53,7 @@ const appRoutes: Routes = [
     HomeComponent,
     ExpenseCategoryComponent,
     CreateExpenseCategoryComponent,
-    EditExpensesCategoryComponent
+    EditExpensesCategoryComponent,
   ],
   imports: [
     BrowserModule,
