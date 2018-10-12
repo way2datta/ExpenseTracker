@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web.Helpers;
+using BeingDK.ExpenseTracker.Data;
 
 namespace BeingDK.ExpenseTracker.Web.FrontEnd.Models
 {

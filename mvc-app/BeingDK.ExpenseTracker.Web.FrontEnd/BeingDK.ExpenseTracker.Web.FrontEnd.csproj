@@ -129,12 +129,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AppDataContext.cs" />
     <Compile Include="Models\ExpensesReportViewModel.cs" />
-    <Compile Include="Models\Expense.cs" />
-    <Compile Include="Models\ExpenseCategory.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -176,6 +172,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BeingDK.ExpenseTracker.Data\BeingDK.ExpenseTracker.Data.csproj">
+      <Project>{7265411f-a499-4554-84f7-818b85450904}</Project>
+      <Name>BeingDK.ExpenseTracker.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

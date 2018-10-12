@@ -2,6 +2,7 @@
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using BeingDK.ExpenseTracker.Data;
 using BeingDK.ExpenseTracker.Web.FrontEnd.Models;
 
 namespace BeingDK.ExpenseTracker.Web.FrontEnd.Controllers
