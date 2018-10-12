@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeingDK.ExpenseTracker.Web.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeingDK.ExpenseTracker.Web.SpaWithWebApi", "..\angular-webapi\BeingDK.ExpenseTracker.Web.SpaWithWebApi\BeingDK.ExpenseTracker.Web.SpaWithWebApi.csproj", "{6267D308-BFD6-4789-9F6C-48CB32C5E662}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeingDK.ExpenseTracker.Data", "..\BeingDK.ExpenseTracker.Data\BeingDK.ExpenseTracker.Data.csproj", "{7265411F-A499-4554-84F7-818B85450904}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6267D308-BFD6-4789-9F6C-48CB32C5E662}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6267D308-BFD6-4789-9F6C-48CB32C5E662}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6267D308-BFD6-4789-9F6C-48CB32C5E662}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7265411F-A499-4554-84F7-818B85450904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7265411F-A499-4554-84F7-818B85450904}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7265411F-A499-4554-84F7-818B85450904}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7265411F-A499-4554-84F7-818B85450904}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

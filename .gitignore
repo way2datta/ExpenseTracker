@@ -10,3 +10,5 @@
 /mvc-app/packages
 /angular-webapi/BeingDK.ExpenseTracker.Web.SpaWithWebApi/bin
 /angular-webapi/BeingDK.ExpenseTracker.Web.SpaWithWebApi/obj/Debug
+/BeingDK.ExpenseTracker.Data/bin/Debug
+/BeingDK.ExpenseTracker.Data/obj/Debug
