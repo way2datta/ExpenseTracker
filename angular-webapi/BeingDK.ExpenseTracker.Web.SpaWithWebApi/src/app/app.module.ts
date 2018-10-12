@@ -30,7 +30,7 @@ import { APP_ROTES } from './app-routes';
     HttpClientModule,
     RouterModule.forRoot(
       APP_ROTES,
-      { enableTracing: true } // <-- debugging purposes only
+      { enableTracing: false } // <-- debugging purposes only
     )
   ],
   providers: [],

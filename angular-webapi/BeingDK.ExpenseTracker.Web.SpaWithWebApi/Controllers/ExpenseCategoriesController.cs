@@ -2,21 +2,24 @@ using System;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Net;
 using System.Web.Http;
 using System.Web.Http.Description;
-using BeingDK.ExpenseTracker.Web.SpaWithWebApi.Models;
+using BeingDK.ExpenseTracker.Data;
 
 namespace BeingDK.ExpenseTracker.Web.SpaWithWebApi.Controllers
 {
   public class ExpenseCategoriesController : ApiController
   {
-    private AppDataContext db = new AppDataContext();
+    private readonly AppDataContext db = new AppDataContext();
 
     // GET: api/ExpenseCategories
-    public IQueryable<ExpenseCategory> GetExpenseCategories()
+    public IQueryable<ExpenseCategoryViewModel> GetExpenseCategories()
     {
-      return db.ExpenseCategories;
+      return db.ExpenseCategories.Select(x => new ExpenseCategoryViewModel
+      {
+        Id = x.Id,
+        Name = x.Name
+      });
     }
 
     // GET: api/ExpenseCategories/5
@@ -29,7 +32,15 @@ namespace BeingDK.ExpenseTracker.Web.SpaWithWebApi.Controllers
         return NotFound();
       }
 
-      return Ok(expenseCategory);
+      return Ok(new ExpenseCategoryViewModel
+      {
+        Id = expenseCategory.Id,
+        Name = expenseCategory.Name,
+        CreatedAt = expenseCategory.CreatedAt,
+        CreatedBy = expenseCategory.CreatedBy,
+        UpdatedAt = expenseCategory.UpdatedAt,
+        UpdatedBy = expenseCategory.UpdatedBy
+      });
     }
 
     // PUT: api/ExpenseCategories/5

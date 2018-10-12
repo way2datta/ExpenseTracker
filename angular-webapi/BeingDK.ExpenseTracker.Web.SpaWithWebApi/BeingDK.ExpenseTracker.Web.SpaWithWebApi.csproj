@@ -112,11 +112,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AppDataContext.cs" />
-    <Compile Include="Models\Expense.cs" />
-    <Compile Include="Models\ExpenseCategory.cs" />
-    <Compile Include="Models\ExpenseCategoryMaster.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\ExpenseCategoryViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +152,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BeingDK.ExpenseTracker.Data\BeingDK.ExpenseTracker.Data.csproj">
+      <Project>{7265411f-a499-4554-84f7-818b85450904}</Project>
+      <Name>BeingDK.ExpenseTracker.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
