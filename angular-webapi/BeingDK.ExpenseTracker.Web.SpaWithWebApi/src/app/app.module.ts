@@ -9,41 +9,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ExpenseCategoryComponent } from './expense-category/expense-category.component';
 import { CreateExpenseCategoryComponent } from './create-expense-category/create-expense-category.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { EditExpensesCategoryComponent } from './edit-expenses-category/edit-expenses-category.component';
-
-const appRoutes: Routes = [
-  {
-    path: 'expenses',
-    component: ExpensesComponent,
-    data: { title: 'Expenses' }
-  },
-  {
-    path: 'dashboard',
-    component: DashboardComponent,
-    data: { title: 'Dashboard' }
-  },
-  {
-    path: 'expense-categories',
-    component: ExpenseCategoryComponent,
-    data: { title: 'Expense Categories' }
-  },
-  {
-    path: 'expense-categories/create',
-    component: CreateExpenseCategoryComponent,
-    data: { title: 'Expense Categories' }
-  },
-  {
-    path: 'expense-categories/:id',
-    component: EditExpensesCategoryComponent,
-    data: { title: 'Expense Categories' }
-  },
-  {
-    path: '',
-    component: HomeComponent,
-    data: { title: 'Home' }
-  }
-];
+import { APP_ROTES } from './app-routes';
 
 @NgModule({
   declarations: [
@@ -61,7 +29,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(
-      appRoutes,
+      APP_ROTES,
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
