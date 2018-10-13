@@ -1,4 +1,4 @@
-﻿@model BeingDK.ExpenseTracker.Web.FrontEnd.Models.ExpenseCategory
+﻿@model BeingDK.ExpenseTracker.Data.ExpenseCategory
 
 @{
     ViewBag.Title = "Edit";
@@ -17,6 +17,8 @@
     @Html.HiddenFor(model => model.Id)
     @Html.HiddenFor(model => model.CreatedBy)
     @Html.HiddenFor(model => model.CreatedAt)
+    @Html.HiddenFor(model => model.UpdatedBy)
+    @Html.HiddenFor(model => model.UpdatedAt)
     <div class="form-group">
         @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
