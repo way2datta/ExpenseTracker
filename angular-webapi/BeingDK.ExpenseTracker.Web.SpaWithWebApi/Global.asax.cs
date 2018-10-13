@@ -14,7 +14,6 @@ namespace BeingDK.ExpenseTracker.Web.SpaWithWebApi
       //json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects;
       config.Formatters.Remove(config.Formatters.XmlFormatter);
 
-
       config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
       config.Formatters.JsonFormatter.UseDataContractJsonSerializer = false;
     }

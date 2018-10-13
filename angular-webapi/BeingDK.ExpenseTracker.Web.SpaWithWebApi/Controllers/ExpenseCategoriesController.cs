@@ -12,7 +12,7 @@ namespace BeingDK.ExpenseTracker.Web.SpaWithWebApi.Controllers
   {
     private readonly AppDataContext db = new AppDataContext();
 
-    // GET: api/ExpenseCategories
+    [HttpGet]
     public IQueryable<ExpenseCategoryViewModel> GetExpenseCategories()
     {
       return db.ExpenseCategories.Select(x => new ExpenseCategoryViewModel
@@ -22,7 +22,7 @@ namespace BeingDK.ExpenseTracker.Web.SpaWithWebApi.Controllers
       });
     }
 
-    // GET: api/ExpenseCategories/5
+    [HttpGet]
     [ResponseType(typeof(ExpenseCategory))]
     public IHttpActionResult GetExpenseCategory(int id)
     {
@@ -43,7 +43,7 @@ namespace BeingDK.ExpenseTracker.Web.SpaWithWebApi.Controllers
       });
     }
 
-    // PUT: api/ExpenseCategories/5
+    [HttpPut]
     [ResponseType(typeof(void))]
     public IHttpActionResult PutExpenseCategory(int id, ExpenseCategory expenseCategory)
     {
@@ -78,7 +78,7 @@ namespace BeingDK.ExpenseTracker.Web.SpaWithWebApi.Controllers
       return Ok(expenseCategory);
     }
 
-    // POST: api/ExpenseCategories
+    [HttpPost]
     [ResponseType(typeof(ExpenseCategory))]
     public IHttpActionResult PostExpenseCategory(ExpenseCategory expenseCategory)
     {
@@ -98,7 +98,7 @@ namespace BeingDK.ExpenseTracker.Web.SpaWithWebApi.Controllers
       return CreatedAtRoute("DefaultApi", new { id = expenseCategory.Id }, expenseCategory);
     }
 
-    // DELETE: api/ExpenseCategories/5
+    [HttpDelete]
     [ResponseType(typeof(ExpenseCategory))]
     public IHttpActionResult DeleteExpenseCategory(int id)
     {
@@ -116,11 +116,8 @@ namespace BeingDK.ExpenseTracker.Web.SpaWithWebApi.Controllers
 
     protected override void Dispose(bool disposing)
     {
-      if (disposing)
-      {
-        db.Dispose();
-      }
       base.Dispose(disposing);
+      db.Dispose();
     }
 
     private bool ExpenseCategoryExists(int id)

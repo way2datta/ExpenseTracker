@@ -7,7 +7,7 @@ using BeingDK.ExpenseTracker.Data;
 
 namespace BeingDK.ExpenseTracker.Web.FrontEnd.Models
 {
-    public class Graph 
+    public class Graph
     {
         public string XCoordinate { get; set; }
         public string YCoordinate { get; set; }
@@ -31,16 +31,19 @@ namespace BeingDK.ExpenseTracker.Web.FrontEnd.Models
             var lastDayOfMonth = new DateTime(year, month, daysInMonth);
 
             Expenses = db.Expenses.Where(x => x.IncurredAt >= firstDayOfMonth && x.IncurredAt <= lastDayOfMonth)
-                                  .OrderBy(x=>x.IncurredAt)
+                                  .OrderBy(x => x.IncurredAt)
                                   .ToList();
 
             var graphData = Expenses.GroupBy(x => x.IncurredAt)
-                    .Select(x => new Graph { XCoordinate = x.Key.ToString("dd-MM-yyyy")
-                    , YCoordinate = x.Sum(y => y.Amount).ToString() })
+                    .Select(x => new Graph
+                    {
+                        XCoordinate = x.Key.ToString("dd-MM-yyyy")
+                    ,
+                        YCoordinate = x.Sum(y => y.Amount).ToString()
+                    })
                     .ToList();
 
-
-            if(graphData!=null && graphData.Any())
+            if (graphData != null && graphData.Any())
             {
                 var chartWebImage = new Chart(width: 900, height: 500, theme: ChartTheme.Yellow)
                                    .AddTitle("Monthly expenses")

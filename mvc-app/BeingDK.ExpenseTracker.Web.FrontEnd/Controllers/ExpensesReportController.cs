@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using BeingDK.ExpenseTracker.Web.FrontEnd.Models;
 
@@ -13,7 +10,7 @@ namespace BeingDK.ExpenseTracker.Web.FrontEnd.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            return View(new ExpensesReportViewModel { SelectedMonth = DateTime.Now});
+            return View(new ExpensesReportViewModel { SelectedMonth = DateTime.Now });
         }
 
         [HttpPost]
