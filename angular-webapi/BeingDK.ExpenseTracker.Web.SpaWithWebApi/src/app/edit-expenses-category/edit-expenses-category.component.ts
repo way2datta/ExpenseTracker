@@ -11,7 +11,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EditExpensesCategoryComponent implements OnInit {
   category: ExpenseCategory= {id: 0, name: ''};
 
-  constructor(private expensesCategoryService: ExpensesCategoryService, private route: ActivatedRoute, private router: Router) {
+  constructor(private expensesCategoryService: ExpensesCategoryService,
+    private route: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit() {

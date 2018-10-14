@@ -36,13 +36,26 @@ namespace BeingDK.ExpenseTracker.Web.SpaWithWebApi.Controllers
     [ResponseType(typeof(Expense))]
     public IHttpActionResult GetExpense(int id)
     {
-      Expense expense = db.Expenses.Find(id);
+      Expense expense = db.Expenses.Find(id); 
       if (expense == null)
       {
         return NotFound();
       }
 
-      return Ok(expense);
+      return Ok(new ExpenseViewModel
+      {
+        Amount = expense.Amount,
+        CategoryId = expense.CategoryId,
+        CreatedAt = expense.CreatedAt,
+        CreatedBy = expense.CreatedBy,
+        Description = expense.Description,
+        ExpenseCategory = new ExpenseCategoryViewModel { Id = expense.ExpenseCategory.Id, Name = expense.ExpenseCategory.Name },
+        Id = expense.Id,
+        IncurredAt = expense.IncurredAt,
+        IncurredBy = expense.IncurredBy,
+        UpdatedAt = expense.UpdatedAt,
+        UpdatedBy = expense.UpdatedBy
+      });
     }
 
     [HttpPut]

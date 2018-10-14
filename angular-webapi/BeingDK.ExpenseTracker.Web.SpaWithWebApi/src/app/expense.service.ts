@@ -20,4 +20,8 @@ export class ExpenseService {
     return this.http.get<Expense[]>(categoriesUrl, httpOptions);
   }
 
+  getExpense(id: number): Observable<Expense> {
+    return this.http.get<Expense>(categoriesUrl +"/"+id, httpOptions);
+  }
+
 }
