@@ -7,6 +7,7 @@ namespace BeingDK.ExpenseTracker.Data
         public AppDataContext()
             : base("name=AppDataContext")
         {
+            Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<ExpenseCategory> ExpenseCategories { get; set; }

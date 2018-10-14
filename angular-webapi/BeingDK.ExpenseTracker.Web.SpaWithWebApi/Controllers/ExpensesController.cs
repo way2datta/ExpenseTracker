@@ -36,7 +36,7 @@ namespace BeingDK.ExpenseTracker.Web.SpaWithWebApi.Controllers
     [ResponseType(typeof(Expense))]
     public IHttpActionResult GetExpense(int id)
     {
-      Expense expense = db.Expenses.Find(id); 
+      Expense expense = db.Expenses.Include(x => x.ExpenseCategory).First(x=>x.Id == id); 
       if (expense == null)
       {
         return NotFound();
@@ -72,6 +72,7 @@ namespace BeingDK.ExpenseTracker.Web.SpaWithWebApi.Controllers
         return BadRequest();
       }
 
+      expense.ExpenseCategory = null;
       db.Entry(expense).State = EntityState.Modified;
 
       try

@@ -7,5 +7,6 @@ export class Expense
     amount: number;
     description: string;
     incurredAt: Date;
+    categoryId: number;
     expenseCategory: ExpenseCategory
 }

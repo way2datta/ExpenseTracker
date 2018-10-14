@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Expense } from '../entities/Expense';
 import { ExpenseService } from '../expense.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ExpenseCategory } from '../entities/ExpenseCategory';
 
 @Component({
   selector: 'app-edit-expense',
@@ -9,11 +10,12 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./edit-expense.component.css']
 })
 export class EditExpenseComponent implements OnInit {
-  expense: Expense;
+  expense: Expense = new Expense();
+  categories: ExpenseCategory[];
 
   constructor(private expenseService: ExpenseService,
-    private route:ActivatedRoute) {
-
+    private route:ActivatedRoute,
+    private router: Router) {
 
   }
 
@@ -27,4 +29,13 @@ export class EditExpenseComponent implements OnInit {
       .subscribe(x=>this.expense = x);
   }
 
+  updateExpense(expense)
+  {
+    debugger;
+    console.log(expense);
+    this.expenseService.updateExpense(expense)
+    .subscribe(c => {
+      this.router.navigate(['/expenses/']);
+    });
+  }
 }
