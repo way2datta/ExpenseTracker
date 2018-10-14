@@ -2,7 +2,7 @@ using System;
 
 namespace BeingDK.ExpenseTracker.Data
 {
-  public partial class ExpenseCategoryViewModel
+  public class ExpenseCategoryViewModel
   {
     public int Id { get; set; }
     public string Name { get; set; }

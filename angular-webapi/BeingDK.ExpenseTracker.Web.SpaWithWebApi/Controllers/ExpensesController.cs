@@ -10,12 +10,26 @@ namespace BeingDK.ExpenseTracker.Web.SpaWithWebApi.Controllers
 {
   public class ExpensesController : ApiController
   {
-    private AppDataContext db = new AppDataContext();
+    private readonly AppDataContext db = new AppDataContext();
 
     [HttpGet]
-    public IQueryable<Expense> GetExpenses()
+    public IQueryable<ExpenseViewModel> GetExpenses()
     {
-      return db.Expenses.Include(x => x.ExpenseCategory);
+      return db.Expenses.Include(x => x.ExpenseCategory)
+                        .Select(x => new ExpenseViewModel
+                        {
+                          Amount = x.Amount,
+                          CategoryId = x.CategoryId,
+                          CreatedAt = x.CreatedAt,
+                          CreatedBy = x.CreatedBy,
+                          Description = x.Description,
+                          ExpenseCategory = new ExpenseCategoryViewModel {  Id = x.ExpenseCategory.Id, Name = x.ExpenseCategory.Name},
+                          Id = x.Id,
+                          IncurredAt = x.IncurredAt,
+                          IncurredBy = x.IncurredBy,
+                          UpdatedAt = x.UpdatedAt,
+                          UpdatedBy = x.UpdatedBy
+                        });
     }
 
     [HttpGet]
@@ -99,11 +113,8 @@ namespace BeingDK.ExpenseTracker.Web.SpaWithWebApi.Controllers
 
     protected override void Dispose(bool disposing)
     {
-      if (disposing)
-      {
-        db.Dispose();
-      }
       base.Dispose(disposing);
+      db.Dispose();
     }
 
     private bool ExpenseExists(int id)
