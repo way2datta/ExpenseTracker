@@ -19,13 +19,9 @@
   <label class="col-sm-2 col-form-label col-form-label-sm">
     Category: </label>
   <div class="col-sm-6">
-    <select class="form-control" id="CategoryId" name="CategoryId"  [(ngModel)]="expense.categoryId" ><option value="1">Bills</option>
-      <option value="4">Entertainment6</option>
-      <option value="8">Health</option>
-      <option value="49">fidget_spinner</option>
-      <option value="50">facepalm</option>
-      <option value="51">aww_yeah2</option>
-      </select>
+    <select class="form-control" name="categoryId" required [(ngModel)]="expense.categoryId">
+      <option *ngFor="let category of categories" [value]="category.id" >{{category.name}}</option>
+    </select>
   </div>
 </div>
 <div class="form-group row">
@@ -39,4 +35,3 @@
   <div class="offset-sm-2 col-sm-6"><button type="submit" class="btn btn-primary" (click)="updateExpense(expense)">Submit</button>
   </div>
 </div>
-
