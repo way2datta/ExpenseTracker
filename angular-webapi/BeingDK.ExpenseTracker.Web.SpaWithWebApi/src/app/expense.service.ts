@@ -14,6 +14,9 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ExpenseService {
+  addExpense(expense: Expense): Observable<Expense> {
+    return this.http.post<Expense>(expenseUrl, expense, httpOptions);
+  }
 
   constructor(private http: HttpClient) { }
 

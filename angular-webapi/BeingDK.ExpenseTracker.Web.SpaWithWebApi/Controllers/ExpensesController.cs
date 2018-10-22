@@ -1,3 +1,4 @@
+using System;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace BeingDK.ExpenseTracker.Web.SpaWithWebApi.Controllers
                           CreatedAt = x.CreatedAt,
                           CreatedBy = x.CreatedBy,
                           Description = x.Description,
-                          ExpenseCategory = new ExpenseCategoryViewModel {  Id = x.ExpenseCategory.Id, Name = x.ExpenseCategory.Name},
+                          ExpenseCategory = new ExpenseCategoryViewModel { Id = x.ExpenseCategory.Id, Name = x.ExpenseCategory.Name },
                           Id = x.Id,
                           IncurredAt = x.IncurredAt,
                           IncurredBy = x.IncurredBy,
@@ -36,7 +37,7 @@ namespace BeingDK.ExpenseTracker.Web.SpaWithWebApi.Controllers
     [ResponseType(typeof(Expense))]
     public IHttpActionResult GetExpense(int id)
     {
-      Expense expense = db.Expenses.Include(x => x.ExpenseCategory).First(x=>x.Id == id); 
+      Expense expense = db.Expenses.Include(x => x.ExpenseCategory).First(x => x.Id == id);
       if (expense == null)
       {
         return NotFound();
@@ -102,6 +103,13 @@ namespace BeingDK.ExpenseTracker.Web.SpaWithWebApi.Controllers
       {
         return BadRequest(ModelState);
       }
+
+      // TODO: Dirty way of doing it, I'll get rid of it later
+      expense.CreatedAt = DateTime.Now;
+      expense.UpdatedAt = DateTime.Now;
+      expense.CreatedBy = 1;
+      expense.IncurredBy = 1;
+      expense.UpdatedBy = 1;
 
       db.Expenses.Add(expense);
       db.SaveChanges();

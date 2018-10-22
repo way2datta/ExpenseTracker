@@ -6,12 +6,18 @@ import { EditExpensesCategoryComponent } from "./edit-expenses-category/edit-exp
 import { HomeComponent } from "./home.component";
 import { Routes } from "@angular/router";
 import { EditExpenseComponent } from "./edit-expense/edit-expense.component";
+import { CreateExpenseComponent } from "./create-expense/create-expense.component";
 
 export const APP_ROTES: Routes = [
   {
     path: 'expenses',
     component: ExpensesComponent,
     data: { title: 'Expenses' }
+  },
+  {
+    path: 'expenses/create',
+    component: CreateExpenseComponent,
+    data: { title: 'Create Expenses' }
   },
   {
     path: 'expenses/:id',

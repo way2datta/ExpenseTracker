@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { EditExpensesCategoryComponent } from './edit-expenses-category/edit-expenses-category.component';
 import { APP_ROTES } from './app-routes';
 import { EditExpenseComponent } from './edit-expense/edit-expense.component';
+import { CreateExpenseComponent } from './create-expense/create-expense.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { EditExpenseComponent } from './edit-expense/edit-expense.component';
     CreateExpenseCategoryComponent,
     EditExpensesCategoryComponent,
     EditExpenseComponent,
+    CreateExpenseComponent,
   ],
   imports: [
     BrowserModule,
